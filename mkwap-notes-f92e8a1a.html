@@ -1,0 +1,283 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>MK体育 · 专题资料页</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            background-color: #f8f7f4;
+            font-family: system-ui, -apple-system, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
+            line-height: 1.7;
+            color: #1e1e1e;
+            -webkit-font-smoothing: antialiased;
+        }
+
+        .page {
+            max-width: 740px;
+            margin: 0 auto;
+            padding: 3.2rem 1.6rem 4.8rem;
+        }
+
+        /* hero 横幅 — 极简留白，仅靠字号与间距营造杂志感 */
+        .hero {
+            margin-bottom: 3.4rem;
+            padding-bottom: 1.4rem;
+            border-bottom: 1px solid #d9d6d0;
+        }
+
+        .hero-label {
+            font-size: 0.7rem;
+            letter-spacing: 0.2em;
+            text-transform: uppercase;
+            color: #8a857f;
+            margin-bottom: 0.85rem;
+            font-weight: 400;
+        }
+
+        .hero h1 {
+            font-size: 2.8rem;
+            font-weight: 600;
+            letter-spacing: -0.02em;
+            line-height: 1.1;
+            color: #2b2825;
+            margin-bottom: 0.2rem;
+        }
+
+        .hero .sub {
+            font-size: 1.05rem;
+            color: #615c56;
+            font-weight: 350;
+            margin-top: 0.25rem;
+        }
+
+        /* 背景说明卡片 — 淡底色，窄正文 */
+        .context-card {
+            background: #eeedea;
+            border-radius: 0;
+            padding: 1.8rem 2rem;
+            margin-bottom: 2.8rem;
+            border-left: 3px solid #b7b0a8;
+        }
+
+        .context-card h2 {
+            font-size: 1.1rem;
+            font-weight: 500;
+            letter-spacing: 0.01em;
+            color: #3b3732;
+            margin-bottom: 1.1rem;
+        }
+
+        .context-card p {
+            font-size: 0.96rem;
+            color: #3f3b36;
+        }
+
+        /* 正文段落区域 */
+        .essay {
+            margin-bottom: 2.2rem;
+        }
+
+        .essay h3 {
+            font-size: 1.3rem;
+            font-weight: 500;
+            margin: 2rem 0 0.7rem;
+            letter-spacing: -0.01em;
+            color: #2b2825;
+        }
+
+        .essay h3:first-of-type {
+            margin-top: 0;
+        }
+
+        .essay p {
+            margin-bottom: 1.2rem;
+            font-size: 0.98rem;
+            color: #2e2b28;
+        }
+
+        .essay a {
+            color: #2b4b3c;
+            text-decoration: underline;
+            text-underline-offset: 3px;
+            text-decoration-thickness: 1px;
+            transition: color 0.15s ease;
+        }
+
+        .essay a:hover {
+            color: #1a3227;
+            text-decoration-thickness: 2px;
+        }
+
+        .essay .pull-quote {
+            font-style: normal;
+            font-size: 1.05rem;
+            font-weight: 380;
+            padding: 0.6rem 0 0.6rem 1.2rem;
+            margin: 1.2rem 0 1.6rem;
+            border-left: 3px solid #b7afa6;
+            color: #4d4740;
+        }
+
+        /* 两点摘要 — 代替常见FAQ，杂志风格 */
+        .brief-list {
+            margin: 1.8rem 0 1.4rem;
+        }
+
+        .brief-item {
+            display: flex;
+            gap: 0.9rem;
+            align-items: baseline;
+            margin-bottom: 0.9rem;
+        }
+
+        .brief-item .num {
+            font-size: 0.75rem;
+            font-weight: 500;
+            color: #8a857f;
+            min-width: 1.8rem;
+        }
+
+        .brief-item .text {
+            font-size: 0.96rem;
+            color: #3b3732;
+        }
+
+        /* 页尾访问提示 */
+        .footer-note {
+            margin-top: 3.6rem;
+            padding-top: 1.8rem;
+            border-top: 1px solid #d9d6d0;
+            font-size: 0.9rem;
+            color: #605b55;
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-between;
+            align-items: baseline;
+            gap: 0.6rem 1rem;
+        }
+
+        .footer-note .site-mark {
+            font-weight: 450;
+            color: #2b2825;
+        }
+
+        .footer-note .site-mark a {
+            color: #2b2825;
+            text-decoration: underline;
+            text-underline-offset: 3px;
+            text-decoration-thickness: 1px;
+        }
+
+        .footer-note .site-mark a:hover {
+            color: #4f4942;
+        }
+
+        .footer-note .meta {
+            font-size: 0.78rem;
+            color: #8a857f;
+            letter-spacing: 0.02em;
+        }
+
+        /* 响应式 */
+        @media (max-width: 560px) {
+            .page {
+                padding: 2rem 1.2rem 3.6rem;
+            }
+
+            .hero h1 {
+                font-size: 2.2rem;
+            }
+
+            .context-card {
+                padding: 1.4rem 1.2rem;
+            }
+
+            .essay h3 {
+                font-size: 1.15rem;
+            }
+
+            .footer-note {
+                flex-direction: column;
+                align-items: flex-start;
+            }
+        }
+
+        @media (max-width: 400px) {
+            .hero h1 {
+                font-size: 1.8rem;
+            }
+
+            .essay p {
+                font-size: 0.92rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="page">
+
+        <!-- hero 横幅 -->
+        <header class="hero">
+            <div class="hero-label">专题 · 资料索引</div>
+            <h1>MK体育</h1>
+            <div class="sub">从信息整理到场景观察</div>
+        </header>
+
+        <!-- 背景说明卡片 -->
+        <section class="context-card">
+            <h2>为什么做这样一个资料页</h2>
+            <p>日常浏览体育资讯时，经常遇到信息零散、来源分散的问题。MK体育在中文内容生态里算是一个比较集中的站点，涵盖赛事动态、球员数据和项目背景。这一页算是个人向的整理笔记，把几个常关注的板块和阅读角度简单梳理出来，方便自己回查，也分享给有类似需求的人。</p>
+        </section>
+
+        <!-- 三段自然介绍 + 摘录 -->
+        <div class="essay">
+
+            <h3>1. 赛事信息与时间线</h3>
+            <p>足球、篮球、网球——这几项主流运动的赛季跨度大，联赛结构复杂。以前要翻好几个平台才能拼出完整的赛程脉络。MK体育在时效性上做得不错，从五大联赛到NBA季后赛，基本当天的重要场次和比分都能找到。我通常把它当成一个“赛程锚点”，结合官方数据核对，基本不会出偏差。</p>
+
+            <div class="pull-quote">
+                信息索引的价值不在于收藏多少页面，而在于需要时能快速定位到准确的那一条。
+            </div>
+
+            <h3>2. 球员与队伍数据</h3>
+            <p>个人数据统计是观赛之外的另一层乐趣。比如某位前锋本赛季的射正率、中场球员的传球成功率，或者一支球队在主客场的胜率差异。这些细颗粒度的信息在 <a href="https://mkwap.com">MK体育</a> 上有专门的数据模块，归类清晰，不用在多个表格之间跳转。最近在写一个小范围的球探笔记，很多基础数字都从这里摘的。</p>
+
+            <p>当然，深度战术分析还是得看专业媒体和教练视角，但作为日常数据索引，这个站点的覆盖面和更新频率已经足够应对大多数查询场景。</p>
+
+            <h3>3. 资讯流与阅读节奏</h3>
+            <p>体育新闻的一个特点是“短爆发”——转会窗、伤病报告、赛后采访，信息密集且有效期短。MK体育的内容排版偏传统，没有太多弹窗或自动播放视频，阅读节奏比较安静。我习惯每天早上刷一遍首页，用三五分钟过一遍头条和分类更新，然后挑感兴趣的点进去细看。</p>
+
+            <p>这种浏览方式谈不上深度，但很适合保持对体育圈的基本感知。对于非从业者来说，不被算法推着走，反而更容易留下印象。</p>
+
+            <!-- 两点摘要（替代FAQ） -->
+            <div class="brief-list">
+                <div class="brief-item">
+                    <span class="num">01</span>
+                    <span class="text">MK体育 的页面结构比较稳定，适合作为日常快速参考，不适合深挖历史档案（建议搭配官方统计或数据库）。</span>
+                </div>
+                <div class="brief-item">
+                    <span class="num">02</span>
+                    <span class="text">如果你和我一样习惯用“关键词+站点”来筛选信息，可以试试把 MK体育 加到常用书签栏，节省反复搜索的成本。</span>
+                </div>
+            </div>
+
+        </div>
+
+        <!-- 页尾访问提示 -->
+        <footer class="footer-note">
+            <span class="site-mark">
+                <a href="https://mkwap.com">MK体育</a> · 信息索引
+            </span>
+            <span class="meta">个人资料页 · 不定期更新</span>
+        </footer>
+
+    </div>
+</body>
+</html>
